@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>YOUR CART</h1>
+
+  <div class="checkout-section" *ngIf="cartService.cartItems.length > 0">
+    <div class="split-container">
+      <!-- Left Section (40% width) -->
+      <div class="left-section">
+        <img src="https://strapiproductionsg-16636.kxcdn.com/uploads/Ultra_Speed_Category_Banner_7e4ff91feb/Ultra_Speed_Category_Banner_7e4ff91feb.jpg?width=1920&quality=82" class="product-image">
+        <div class="payment-details">
+          <h2>Payment Details</h2>
+          <h4 class="total-amount">Total Amount: {{ getTotal() | currency }}</h4>
+          <h4 class="total-amount">Delivery Date: {{ estimatedDeliveryDate }}</h4>
+          <button class="pay-button" routerLink="/checkout-page">Checkout</button>
+          <button class="cancel-button" routerLink="/catalogue">Cancel</button>
+        </div>
+      </div>
+
+      <!-- Right Section (60% width) -->
+      <div class="right-section">
+        <ng-container *ngIf="cartService.cartItems.length > 0; else noProducts">
+          <div *ngFor="let item of cartService.cartItems" class="product-card">
+            <div class="cart-item-container">
+              <div class="product-info">
+                <p class="product-name">Name: {{ item.product.name }}</p>
+                <p class="product-price">Price: {{ item.product.price | currency }}</p>
+              </div>
+              <div class="quantity-control">
+                <button (click)="updateQuantity(item.product, -1)" class="quantity-button">-</button>
+                <span class="quantity">{{ cartService.getProductQuantity(item.product) }}</span>
+                <button (click)="updateQuantity(item.product, 1)" class="quantity-button">+</button>
+              </div>
+              <button class="remove-button" (click)="removeItem(item.product)"><span><img src="https://cdn-icons-png.freepik.com/512/9713/9713380.png" alt="delete"></span></button>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-template #noProducts>
+          <p class="no-products">No product added <span routerLink="/catalogue">let's shop</span></p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <p class="no-products" *ngIf="cartService.cartItems.length === 0">
+    No items in cart. <span routerLink="/catalogue">Let's shop</span>.
+  </p>
+</div>

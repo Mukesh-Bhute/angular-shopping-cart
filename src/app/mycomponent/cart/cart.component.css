@@ -1,0 +1,173 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px; 
+  font-weight: bold; 
+  color: #13001a; 
+  text-align: center; 
+  text-transform: uppercase; 
+  margin: 20px 0; 
+  letter-spacing: 1px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  background-color: #f9f9f9; 
+  padding: 10px 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.checkout-section {
+  width: 100%;
+}
+
+.split-container {
+  display: flex;
+  width: 100%;
+}
+
+.left-section {
+  width: 40%;
+  padding-right: 20px; /* Space between sections */
+}
+
+.right-section {
+  width: 60%;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 300px; /* Adjust image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin-bottom: 20px;
+}
+
+.payment-details {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.payment-details h2 {
+  margin-bottom: 10px;
+}
+
+.total-amount {
+  margin-bottom: 10px;
+}
+
+.pay-button,
+.cancel-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-right: 8px;
+}
+
+.cancel-button {
+  background-color: #ff0000;
+ }
+
+span img{
+  max-width:29px;
+  
+}
+
+.pay-button:hover {
+  background-color: #054308;
+}
+
+.cancel-button:hover {
+  background-color: #c55f5f;
+}
+
+.product-card {
+  margin-bottom: 20px;
+}
+
+.cart-item-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-info {
+  flex-grow: 1;
+}
+
+.product-name {
+  font-weight: bold;
+}
+
+.product-price {
+  color: #007bff;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-button {
+  background-color: #198754;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.quantity-button:hover {
+  background-color: #007b54;
+}
+
+.quantity {
+  font-weight: bold;
+}
+
+.remove-button {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin-left: 10px;
+}
+
+.remove-button:hover {
+  background-color: #9c2f3d;
+}
+
+span{
+color: #007bff;
+cursor: pointer;
+}
+
+.no-products {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+}
+
+img{
+  min-width: 100%;
+  border-radius: 10px;
+}

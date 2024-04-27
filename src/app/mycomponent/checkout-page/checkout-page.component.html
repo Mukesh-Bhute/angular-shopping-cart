@@ -1,0 +1,64 @@
+<div class="container">
+  <h1>CONFIRM ORDER</h1>
+
+  <div class="checkout-section" *ngIf="cartService.cartItems.length > 0">
+    <div class="split-container">
+      <!-- Left Section (40% width) -->
+      <div class="left-section">
+        <img src="https://thumbs.dreamstime.com/b/young-ladies-shopping-bags-posing-shoes-store-young-ladies-shopping-bags-posing-shoes-store-175144020.jpg" class="product-image">
+        <div class="payment-details">
+          <h2>Payment Details</h2>
+          <h4 class="total-amount">Total Amount: {{ getTotal() | currency }}</h4>
+          <ul>
+            <li>
+              <input type="radio" name="paymentOption" id="creditCard" value="creditCard">
+              <label for="creditCard">Pay using Credit Card</label>
+            </li>
+            <li>
+              <input type="radio" name="paymentOption" id="cashOnDelivery" value="cashOnDelivery">
+              <label for="cashOnDelivery">Cash on Delivery (COD)</label>
+            </li>
+            <li>
+              <input type="radio" name="paymentOption" id="wallet" value="wallet">
+              <label for="wallet">Pay using Wallet</label>
+            </li>
+            <li>
+          <button class="pay-button" routerLink="/checkout-page">Checkout</button>
+          <button class="cancel-button" routerLink="/catalogue">Cancel</button>
+          </li>
+      </ul>
+          
+        </div>
+      </div>
+
+      <!-- Right Section (60% width) -->
+      <div class="right-section">
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of cartService.cartItems">
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.product.price | currency }}</td>
+                <td>{{ item.product.price * item.quantity | currency }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="no-products" *ngIf="cartService.cartItems.length === 0">
+    No items in cart. <span routerLink="/catalogue">Let's shop</span>.
+  </p>
+</div>
