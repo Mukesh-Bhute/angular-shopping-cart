@@ -5,10 +5,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensure the navbar is above other content */
+    z-index: 1000; 
   }
   
   .router-outlet-wrapper {
-    padding-top: 80px; /* Adjust based on the height of your navbar */
+    padding-top: 80px;
   }
   

@@ -6,15 +6,12 @@ interface Product {
   weight: string;
   price: number;
 }
-
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   cartItems: { product: Product, quantity: number }[] = [];
-
   constructor() { }
-
   addToCart(product: Product): void {
     const existingItem = this.cartItems.find(item => item.product === product);
     if (existingItem) {
@@ -23,12 +20,9 @@ export class CartService {
       this.cartItems.push({ product, quantity: 1 });
     }
   }
-  
-
-  removeFromCart(product: Product): void {
+    removeFromCart(product: Product): void {
     this.cartItems = this.cartItems.filter(item => item.product !== product);
   }
-
   updateQuantity(product: Product, quantity: number): void {
     const item = this.cartItems.find(item => item.product === product);
     if (item) {
@@ -38,11 +32,9 @@ export class CartService {
       }
     }
   }
-
   isProductInCart(product: Product): boolean {
     return this.cartItems.some(item => item.product === product);
   }
-
   getProductQuantity(product: Product): number {
     const item = this.cartItems.find(item => item.product === product);
     return item ? item.quantity : 0;
