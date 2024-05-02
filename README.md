@@ -1,6 +1,6 @@
-# E-SPARE - Angular Shopping Cart Application
+# SHOEmania - Angular Shopping Cart Application
 
-E-SPARE is a web application developed using Angular for managing shopping cart functionality. It allows users to browse through a catalog of products, add items to their cart, and proceed to checkout. This README provides an overview of the project structure, setup instructions, and usage guidelines.
+SHOEmania is a web application developed using Angular for managing shopping cart functionality. It allows users to browse through a catalog of products, add items to their cart, and proceed to checkout. This README provides an overview of the project structure, setup instructions, and usage guidelines.
 
 ## Features
 
@@ -22,13 +22,7 @@ E-SPARE is a web application developed using Angular for managing shopping cart 
 
 ## Experience the live website here
 
-[E-SPARE](https://angular-shopping-cart.onrender.com/)
-
-
-## Check Video Here
-[E-SPARE Demo Video](https://youtu.be/aM41ONzzBBo)
-
-
+[SHOEmania](https://angular-shoemania.onrender.com)
 
 ## AngularShoppingCart
 
